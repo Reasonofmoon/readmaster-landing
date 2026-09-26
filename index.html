@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ReadMaster - 우리 학원에 AI 영어 코치를 더하세요</title>
-<meta name="description" content="ReadMaster는 학생마다 다른 영어 원서를 AI가 추천하고, 독서 기록과 학습 리포트가 자동으로 쌓이는 프랜차이즈 전용 플랫폼입니다.">
+<title>ReadMaster - 국어·독서 학원에 영어 원서 과정을 더하세요</title>
+<meta name="description" content="국어·독서논술 학원이 기존 학생 그대로 영어 원서 과정을 추가하는 방법. AI 원서 추천과 독서 리포트 자동화, 춘천·부천 직영 본사의 검증된 커리큘럼.">
 <style>
   :root {
     --blue-900: #0f2e5a;
@@ -21,7 +21,6 @@
   body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif; color: var(--gray-900); line-height: 1.6; }
   .container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
 
-  /* Header */
   header { position: sticky; top: 0; background: var(--white); border-bottom: 1px solid var(--blue-100); z-index: 10; }
   .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
   .logo { display: flex; align-items: baseline; gap: 10px; }
@@ -30,25 +29,25 @@
   .btn-cta-top { background: var(--blue-700); color: var(--white); border: none; padding: 10px 20px; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; text-decoration: none; }
   .btn-cta-top:hover { background: var(--blue-900); }
 
-  /* Hero */
-  .hero { background: linear-gradient(135deg, var(--blue-50) 0%, var(--white) 60%); padding: 72px 0 64px; text-align: center; }
+  .hero { background: linear-gradient(135deg, var(--blue-50) 0%, var(--white) 60%); padding: 72px 0 56px; text-align: center; }
   .hero h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 800; color: var(--blue-900); letter-spacing: -1px; margin-bottom: 18px; }
-  .hero p { font-size: clamp(16px, 2.4vw, 19px); color: var(--gray-600); max-width: 640px; margin: 0 auto 32px; }
+  .hero p { font-size: clamp(16px, 2.4vw, 19px); color: var(--gray-600); max-width: 680px; margin: 0 auto 32px; }
   .btn-cta { display: inline-block; background: var(--blue-700); color: var(--white); padding: 16px 40px; border-radius: 10px; font-size: 18px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 14px rgba(37,99,235,.35); transition: transform .15s; }
   .btn-cta:hover { transform: translateY(-2px); background: var(--blue-900); }
   .hero-badges { margin-top: 28px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
   .badge { background: var(--white); border: 1px solid var(--blue-100); color: var(--blue-700); font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 999px; }
+  .hq-note { margin-top: 22px; font-size: 14px; color: var(--gray-600); }
+  .hq-note strong { color: var(--blue-900); }
 
-  /* Features */
   .features { padding: 64px 0; }
-  .features h2 { text-align: center; font-size: 30px; color: var(--blue-900); letter-spacing: -0.5px; margin-bottom: 40px; }
+  .features h2 { text-align: center; font-size: 30px; color: var(--blue-900); letter-spacing: -0.5px; margin-bottom: 12px; }
+  .features .sub { text-align: center; color: var(--gray-600); margin-bottom: 40px; }
   .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
   .card { background: var(--white); border: 1px solid var(--blue-100); border-radius: 14px; padding: 32px 26px; }
   .card .icon { width: 48px; height: 48px; border-radius: 12px; background: var(--blue-50); display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 18px; }
   .card h3 { font-size: 19px; color: var(--blue-900); margin-bottom: 10px; }
   .card p { font-size: 15px; color: var(--gray-600); }
 
-  /* Form */
   .apply { background: var(--blue-50); padding: 72px 0; }
   .apply h2 { text-align: center; font-size: 30px; color: var(--blue-900); margin-bottom: 10px; }
   .apply .sub { text-align: center; color: var(--gray-600); margin-bottom: 40px; font-size: 16px; }
@@ -70,7 +69,6 @@
   .btn-submit:hover { background: var(--blue-900); }
   .privacy-note { font-size: 12px; color: var(--gray-400); text-align: center; margin-top: 14px; }
 
-  /* Footer */
   footer { background: var(--blue-900); color: var(--white); padding: 40px 0; }
   .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
   footer .brand { font-size: 18px; font-weight: 700; }
@@ -83,7 +81,7 @@
   <div class="container header-inner">
     <div class="logo">
       <strong>ReadMaster</strong>
-      <span>AI 기반 영어 원서 학습 플랫폼</span>
+      <span>국어·독서 학원의 영어 원서 과정</span>
     </div>
     <a class="btn-cta-top" href="#apply">상담 신청</a>
   </div>
@@ -91,35 +89,37 @@
 
 <section class="hero">
   <div class="container">
-    <h1>우리 학원에 AI 영어 코치를<br>더하세요</h1>
-    <p>학생마다 다른 원서를 AI가 추천하고, 독서 기록과 리포트가 자동으로 쌓입니다. 원장님은 결과만 확인하세요.</p>
+    <h1>잘하는 읽기 지도를,<br>이제 영어로도 하세요</h1>
+    <p>국어·독서논술 학원이 새 강사 채용이나 신규 학생 모집 없이, 기존 학생에게 영어 원서 과정을 추가하는 가장 빠른 방법. AI가 학생별 원서를 추천하고 독서 리포트가 자동으로 쌓입니다.</p>
     <a class="btn-cta" href="#apply">무료 상담 신청하기</a>
     <div class="hero-badges">
+      <span class="badge">기존 국어·독서 학생 그대로</span>
       <span class="badge">AI 맞춤 원서 추천</span>
-      <span class="badge">학습 리포트 자동화</span>
-      <span class="badge">프랜차이즈 전용 교재</span>
+      <span class="badge">독서 리포트 자동화</span>
     </div>
+    <p class="hq-note"><strong>춘천 우두동 본사</strong>와 <strong>부천 옥길 본사</strong>에서 직접 운영하며 검증한 커리큘럼입니다.</p>
   </div>
 </section>
 
 <section class="features">
   <div class="container">
-    <h2>왜 ReadMaster인가</h2>
+    <h2>국어·독서 학원이 ReadMaster로 하는 일</h2>
+    <p class="sub">읽기·쓰기 지도 노하우는 이미 갖고 계신 원장님. 부족한 것은 영어 원서 시스템뿐입니다.</p>
     <div class="cards">
       <div class="card">
         <div class="icon">📚</div>
-        <h3>AI 맞춤 원서 추천</h3>
-        <p>학생의 수준과 관심사를 분석해 딱 맞는 영어 원서를 추천합니다. 놓치던 학생의 흥미를 되살립니다.</p>
+        <h3>영어 원서 선정은 AI가</h3>
+        <p>학생의 읽기 수준과 관심사를 분석해 딱 맞는 영어 원서를 추천합니다. 어떤 책부터 읽힐지 고민할 필요가 없습니다.</p>
       </div>
       <div class="card">
         <div class="icon">📊</div>
-        <h3>학습 리포트 자동화</h3>
-        <p>독서 기록, 어휘 성장, 이해도가 자동으로 정리됩니다. 학부모 상담 자료는 클릭 한 번으로 완성.</p>
+        <h3>독서 리포트 자동화</h3>
+        <p>국어 독서 지도 경험을 그대로 살려 영어 독후 활동까지. 읽기 기록과 이해도가 자동 정리되어 학부모 상담 자료가 완성됩니다.</p>
       </div>
       <div class="card">
         <div class="icon">🏫</div>
-        <h3>프랜차이즈 전용 교재 지원</h3>
-        <p>학원 브랜드에 맞춘 교재와 커리큘럼 패키지로 경쟁 학원과 차별화된 운영이 가능합니다.</p>
+        <h3>기존 학생으로 새 매출</h3>
+        <p>이미 신뢰를 쌓은 기존 학생에게 영어 원서 과정을 추가해 학원 매출을 늘립니다. 이탈 학생 방지 효과도 함께 얻습니다.</p>
       </div>
     </div>
   </div>
@@ -127,11 +127,10 @@
 
 <section class="apply" id="apply">
   <div class="container">
-    <h2>프랜차이즈 상담 신청</h2>
-    <p class="sub">1영업일 내에 담당자가 연락드립니다. 도입 효과와 비용을 상세히 안내해 드릴게요.</p>
+    <h2>영어 원서 과정 도입 상담</h2>
+    <p class="sub">국어·독서논술·문해력 학원 원장님을 위한 안내입니다. 1영업일 내 연락드립니다.</p>
     <div class="form-wrap">
       <form action="https://formsubmit.co/soundfury37@gmail.com" method="POST">
-        <!-- FormSubmit settings -->
         <input type="hidden" name="_subject" value="[ReadMaster] 새 상담 신청이 도착했습니다">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_next" value="https://readmaster-landing.vercel.app/thankyou.html">
@@ -140,11 +139,11 @@
         <div class="form-row">
           <div class="field">
             <label>학원명 <span class="req">*</span></label>
-            <input type="text" name="학원명" required placeholder="예) 달빛영어학원">
+            <input type="text" name="학원명" required placeholder="예) 우리독서논술학원">
           </div>
           <div class="field">
             <label>담당자 이름 <span class="req">*</span></label>
-            <input type="text" name="담당자" required placeholder="예) 김선생">
+            <input type="text" name="담당자" required placeholder="예) 김원장">
           </div>
         </div>
         <div class="form-row">
@@ -155,6 +154,30 @@
           <div class="field">
             <label>이메일</label>
             <input type="email" name="이메일" placeholder="director@academy.com">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label>학원 유형 <span class="req">*</span></label>
+            <select name="학원 유형" required>
+              <option value="">선택해주세요</option>
+              <option>국어 학원</option>
+              <option>독서논술 학원</option>
+              <option>문해력·독서 지도</option>
+              <option>국어+영어 통합</option>
+              <option>기타</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>지역</label>
+            <select name="지역">
+              <option value="">선택해주세요</option>
+              <option>춘천·강원</option>
+              <option>부천·경기 서부</option>
+              <option>인천</option>
+              <option>서울</option>
+              <option>기타 지역</option>
+            </select>
           </div>
         </div>
         <div class="field">
@@ -170,10 +193,10 @@
         <div class="field">
           <label>관심 항목 (중복 선택 가능)</label>
           <div class="checks">
-            <label class="check"><input type="checkbox" name="관심항목" value="원서 추천 시스템">원서 추천 시스템</label>
-            <label class="check"><input type="checkbox" name="관심항목" value="학습 리포트">학습 리포트</label>
-            <label class="check"><input type="checkbox" name="관심항목" value="프랜차이즈 교재">프랜차이즈 교재</label>
-            <label class="check"><input type="checkbox" name="관심항목" value="전체 패키지">전체 패키지</label>
+            <label class="check"><input type="checkbox" name="관심항목" value="영어 원서 과정 추가">영어 원서 과정 추가</label>
+            <label class="check"><input type="checkbox" name="관심항목" value="AI 원서 추천 시스템">AI 원서 추천 시스템</label>
+            <label class="check"><input type="checkbox" name="관심항목" value="독서 리포트 자동화">독서 리포트 자동화</label>
+            <label class="check"><input type="checkbox" name="관심항목" value="도입 비용·절차 안내">도입 비용·절차 안내</label>
           </div>
         </div>
         <div class="field">
@@ -190,7 +213,7 @@
 <footer>
   <div class="container footer-inner">
     <div class="brand">ReadMaster</div>
-    <div class="contact">AI 기반 영어 원서 학습 플랫폼 · 상담 문의: soundfury37@gmail.com</div>
+    <div class="contact">춘천 우두동 본사 · 부천 옥길 본사 | 국어·독서 학원의 영어 원서 과정 | 상담 문의: soundfury37@gmail.com</div>
   </div>
 </footer>
 

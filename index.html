@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ReadMaster - 우리 학원에 AI 영어 코치를 더하세요</title>
+<meta name="description" content="ReadMaster는 학생마다 다른 영어 원서를 AI가 추천하고, 독서 기록과 학습 리포트가 자동으로 쌓이는 프랜차이즈 전용 플랫폼입니다.">
+<style>
+  :root {
+    --blue-900: #0f2e5a;
+    --blue-700: #1d4ed8;
+    --blue-600: #2563eb;
+    --blue-100: #dbeafe;
+    --blue-50: #eff6ff;
+    --gray-900: #111827;
+    --gray-600: #4b5563;
+    --gray-400: #9ca3af;
+    --white: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif; color: var(--gray-900); line-height: 1.6; }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+  /* Header */
+  header { position: sticky; top: 0; background: var(--white); border-bottom: 1px solid var(--blue-100); z-index: 10; }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+  .logo { display: flex; align-items: baseline; gap: 10px; }
+  .logo strong { font-size: 22px; color: var(--blue-900); letter-spacing: -0.5px; }
+  .logo span { font-size: 13px; color: var(--gray-600); }
+  .btn-cta-top { background: var(--blue-700); color: var(--white); border: none; padding: 10px 20px; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; text-decoration: none; }
+  .btn-cta-top:hover { background: var(--blue-900); }
+
+  /* Hero */
+  .hero { background: linear-gradient(135deg, var(--blue-50) 0%, var(--white) 60%); padding: 72px 0 64px; text-align: center; }
+  .hero h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 800; color: var(--blue-900); letter-spacing: -1px; margin-bottom: 18px; }
+  .hero p { font-size: clamp(16px, 2.4vw, 19px); color: var(--gray-600); max-width: 640px; margin: 0 auto 32px; }
+  .btn-cta { display: inline-block; background: var(--blue-700); color: var(--white); padding: 16px 40px; border-radius: 10px; font-size: 18px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 14px rgba(37,99,235,.35); transition: transform .15s; }
+  .btn-cta:hover { transform: translateY(-2px); background: var(--blue-900); }
+  .hero-badges { margin-top: 28px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .badge { background: var(--white); border: 1px solid var(--blue-100); color: var(--blue-700); font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 999px; }
+
+  /* Features */
+  .features { padding: 64px 0; }
+  .features h2 { text-align: center; font-size: 30px; color: var(--blue-900); letter-spacing: -0.5px; margin-bottom: 40px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+  .card { background: var(--white); border: 1px solid var(--blue-100); border-radius: 14px; padding: 32px 26px; }
+  .card .icon { width: 48px; height: 48px; border-radius: 12px; background: var(--blue-50); display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 18px; }
+  .card h3 { font-size: 19px; color: var(--blue-900); margin-bottom: 10px; }
+  .card p { font-size: 15px; color: var(--gray-600); }
+
+  /* Form */
+  .apply { background: var(--blue-50); padding: 72px 0; }
+  .apply h2 { text-align: center; font-size: 30px; color: var(--blue-900); margin-bottom: 10px; }
+  .apply .sub { text-align: center; color: var(--gray-600); margin-bottom: 40px; font-size: 16px; }
+  .form-wrap { max-width: 640px; margin: 0 auto; background: var(--white); border-radius: 16px; padding: 40px; box-shadow: 0 8px 30px rgba(15,46,90,.08); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+  .field { margin-bottom: 18px; }
+  .field label { display: block; font-size: 14px; font-weight: 600; color: var(--gray-900); margin-bottom: 6px; }
+  .field label .req { color: #dc2626; margin-left: 2px; }
+  .field input[type=text], .field input[type=tel], .field input[type=email], .field select, .field textarea {
+    width: 100%; padding: 12px 14px; border: 1.5px solid #e5e7eb; border-radius: 8px; font-size: 15px; font-family: inherit; background: var(--white);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--blue-600); box-shadow: 0 0 0 3px rgba(37,99,235,.12); }
+  .checks { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  @media (max-width: 560px) { .checks { grid-template-columns: 1fr; } }
+  .check { display: flex; align-items: center; gap: 8px; font-size: 15px; color: var(--gray-600); }
+  .check input { width: 18px; height: 18px; accent-color: var(--blue-700); }
+  .btn-submit { width: 100%; background: var(--blue-700); color: var(--white); border: none; padding: 16px; border-radius: 10px; font-size: 17px; font-weight: 700; cursor: pointer; margin-top: 8px; }
+  .btn-submit:hover { background: var(--blue-900); }
+  .privacy-note { font-size: 12px; color: var(--gray-400); text-align: center; margin-top: 14px; }
+
+  /* Footer */
+  footer { background: var(--blue-900); color: var(--white); padding: 40px 0; }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  footer .brand { font-size: 18px; font-weight: 700; }
+  footer .contact { font-size: 14px; color: var(--blue-100); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <div class="logo">
+      <strong>ReadMaster</strong>
+      <span>AI 기반 영어 원서 학습 플랫폼</span>
+    </div>
+    <a class="btn-cta-top" href="#apply">상담 신청</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>우리 학원에 AI 영어 코치를<br>더하세요</h1>
+    <p>학생마다 다른 원서를 AI가 추천하고, 독서 기록과 리포트가 자동으로 쌓입니다. 원장님은 결과만 확인하세요.</p>
+    <a class="btn-cta" href="#apply">무료 상담 신청하기</a>
+    <div class="hero-badges">
+      <span class="badge">AI 맞춤 원서 추천</span>
+      <span class="badge">학습 리포트 자동화</span>
+      <span class="badge">프랜차이즈 전용 교재</span>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <h2>왜 ReadMaster인가</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">📚</div>
+        <h3>AI 맞춤 원서 추천</h3>
+        <p>학생의 수준과 관심사를 분석해 딱 맞는 영어 원서를 추천합니다. 놓치던 학생의 흥미를 되살립니다.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📊</div>
+        <h3>학습 리포트 자동화</h3>
+        <p>독서 기록, 어휘 성장, 이해도가 자동으로 정리됩니다. 학부모 상담 자료는 클릭 한 번으로 완성.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🏫</div>
+        <h3>프랜차이즈 전용 교재 지원</h3>
+        <p>학원 브랜드에 맞춘 교재와 커리큘럼 패키지로 경쟁 학원과 차별화된 운영이 가능합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="apply" id="apply">
+  <div class="container">
+    <h2>프랜차이즈 상담 신청</h2>
+    <p class="sub">1영업일 내에 담당자가 연락드립니다. 도입 효과와 비용을 상세히 안내해 드릴게요.</p>
+    <div class="form-wrap">
+      <form action="https://formsubmit.co/soundfury37@gmail.com" method="POST">
+        <!-- FormSubmit settings -->
+        <input type="hidden" name="_subject" value="[ReadMaster] 새 상담 신청이 도착했습니다">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://readmaster-landing.vercel.app/thankyou.html">
+        <input type="hidden" name="_captcha" value="false">
+
+        <div class="form-row">
+          <div class="field">
+            <label>학원명 <span class="req">*</span></label>
+            <input type="text" name="학원명" required placeholder="예) 달빛영어학원">
+          </div>
+          <div class="field">
+            <label>담당자 이름 <span class="req">*</span></label>
+            <input type="text" name="담당자" required placeholder="예) 김선생">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label>연락처 <span class="req">*</span></label>
+            <input type="tel" name="연락처" required placeholder="010-0000-0000">
+          </div>
+          <div class="field">
+            <label>이메일</label>
+            <input type="email" name="이메일" placeholder="director@academy.com">
+          </div>
+        </div>
+        <div class="field">
+          <label>재학생 수</label>
+          <select name="재학생 수">
+            <option value="">선택해주세요</option>
+            <option>30명 미만</option>
+            <option>30-100명</option>
+            <option>100-300명</option>
+            <option>300명 이상</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>관심 항목 (중복 선택 가능)</label>
+          <div class="checks">
+            <label class="check"><input type="checkbox" name="관심항목" value="원서 추천 시스템">원서 추천 시스템</label>
+            <label class="check"><input type="checkbox" name="관심항목" value="학습 리포트">학습 리포트</label>
+            <label class="check"><input type="checkbox" name="관심항목" value="프랜차이즈 교재">프랜차이즈 교재</label>
+            <label class="check"><input type="checkbox" name="관심항목" value="전체 패키지">전체 패키지</label>
+          </div>
+        </div>
+        <div class="field">
+          <label>문의 내용</label>
+          <textarea name="문의 내용" rows="4" placeholder="궁금하신 점을 편하게 적어주세요."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">상담 신청하기</button>
+        <p class="privacy-note">입력하신 정보는 상담 목적으로만 사용되며, 외부에 제공되지 않습니다.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="brand">ReadMaster</div>
+    <div class="contact">AI 기반 영어 원서 학습 플랫폼 · 상담 문의: soundfury37@gmail.com</div>
+  </div>
+</footer>
+
+</body>
+</html>
